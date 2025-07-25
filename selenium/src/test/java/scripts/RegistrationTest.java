@@ -10,7 +10,7 @@ public class RegistrationTest extends BaseTest{
     @Test(priority = 1)
     public void verifyValidRegistration(){
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.validRegistration("mina","mina1@gmail.com","abc123","abc123","0790512345","12-25-2000");
+        registerPage.validRegistration("mina","mina8@gmail.com","abc123","abc123","0790512345","12-25-2000");
     }
 
     @Test(priority = 2)
@@ -46,7 +46,7 @@ public class RegistrationTest extends BaseTest{
     @Test(priority = 7)
     public void VerifyDOB(){
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.enterDOB("05-10-2025");
+        registerPage.enterDOB("07-27-2025");
     }
 
     @Test(priority = 8)

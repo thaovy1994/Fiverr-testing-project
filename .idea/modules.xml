@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Fiverr-testing-project.iml" filepath="$PROJECT_DIR$/.idea/Fiverr-testing-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/playwright/capstone-demo5.iml" filepath="$PROJECT_DIR$/playwright/capstone-demo5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/selenium/demo_5.iml" filepath="$PROJECT_DIR$/selenium/demo_5.iml" />
     </modules>
   </component>
 </project>
