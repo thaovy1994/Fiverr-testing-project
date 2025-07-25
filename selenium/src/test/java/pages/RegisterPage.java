@@ -111,6 +111,25 @@ public class RegisterPage {
         System.out.println(" Password is invalid");
     }
 
+    public void invalidConfirmationPassword(String pwd, String confirmPassword) {
+        driver.findElement(By.xpath("//a[@href='/register']")).click();
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys(pwd);
+        driver.findElement(By.xpath("//input[@id='confirmPassword']")).sendKeys(confirmPassword);
+
+        Actions actions = new Actions(driver);
+        actions.moveByOffset(0, 0).click().perform();
+
+        if (!pwd.equals(confirmPassword)) {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//span[@class='text-danger' and contains(text(), 'Password phải trùng nhau')]")
+            ));
+            System.out.println("Password and confirmation password do not match.");
+        } else {
+            System.out.println("Password and confirmation password match.");
+        }
+    }
+
     public void invalidPhone(String phone){
         driver.findElement(By.xpath("//a[@href='/register']")).click();
         driver.findElement(By.xpath("//input[@id='phone']")).sendKeys(phone);
@@ -132,8 +151,7 @@ public class RegisterPage {
             LocalDate currentDate = LocalDate.now();
 
             if (!inputDate.isBefore(currentDate)) {
-                System.out.println("Error Message: Birth date must be in the past !");
-                return;
+                throw new AssertionError("Error Message: Birth date must be in the past !");
             }
             WebElement dobField = driver.findElement(By.xpath("//input[@id='birthday']"));
             dobField.clear();
@@ -141,6 +159,7 @@ public class RegisterPage {
             System.out.println("DOB entered: " + dobInput);
         } catch (Exception e) {
             e.printStackTrace();
+            throw new AssertionError("Error during DOB entry: " + e.getMessage());
         }
     }
 

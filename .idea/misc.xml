@@ -3,8 +3,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/selenium/pom.xml" />
         <option value="$PROJECT_DIR$/playwright/pom.xml" />
+        <option value="$PROJECT_DIR$/selenium/pom.xml" />
       </list>
     </option>
   </component>

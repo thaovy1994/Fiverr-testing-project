@@ -10,7 +10,7 @@ public class RegistrationTest extends BaseTest{
     @Test(priority = 1)
     public void verifyValidRegistration(){
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.validRegistration("mina","mina8@gmail.com","abc123","abc123","0790512345","12-25-2000");
+        registerPage.validRegistration("mina","mina9@gmail.com","abc123","abc123","0790512345","12-25-2000");
     }
 
     @Test(priority = 2)
@@ -38,24 +38,30 @@ public class RegistrationTest extends BaseTest{
     }
 
     @Test(priority = 6)
+    public void verifyConfirmPassword (){
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.invalidConfirmationPassword("abc","abc1");
+    }
+
+    @Test(priority = 7)
     public void verifyInvalidPhone (){
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.invalidPhone("0123");
     }
 
-    @Test(priority = 7)
+    @Test(priority = 8)
     public void VerifyDOB(){
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.enterDOB("07-27-2025");
     }
 
-    @Test(priority = 8)
+    @Test(priority = 9)
     public void verifyCheckbox (){
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.uncheckBox("mina","mina@gmail.com","abc123","abc123","0790512345","12-25-2000");
     }
 
-    @Test(priority = 9)
+    @Test(priority = 10)
     public void verifyExistingEmail(){
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.checkExistingEmail("mina","mina@gmail.com","abc123","abc123","0790512345","12-25-2000");
