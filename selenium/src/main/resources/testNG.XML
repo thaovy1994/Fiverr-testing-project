@@ -4,6 +4,7 @@
         <classes>
             <class name="scripts.RegistrationTest"/>
             <class name="scripts.LoginTest"/>
+            <class name="scripts.SearchTest"/>
         </classes>
     </test>
 </suite>
